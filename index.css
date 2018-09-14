@@ -1,13 +1,10 @@
 #mainContent {
 	font-size: large;
 	font-weight: bold;
-	background-color: #E5F0FA;
-	border-radius: 4px;
-	padding: 10px;
+	padding: 5px;
 	text-align: center;
 }
 .buttonStyle {
-	padding: 5px;
 	color: #663300;
 	width: 100px;
 }
