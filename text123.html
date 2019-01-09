@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+<head>
+<meta charset="utf-8">
+<title>Shun Akiya</title>
+</head>
+
+<body>
+
+    <button type="button" onclick="clkme()" >Click Me</button>
+    <p id="ptext">This is about to change</p>
+    
+
+    <button type="button" onclick="adder()" >Adder</button>
+    
+    
+    <button type="button" onclick="test123()" >test123</button>
+    
+    
+    <p id="name">My Name will go here</p>
+    
+    
+    <img width = 200 id = "graphic" src="/images/minecraft.jpg" />
+    
+    <button id = "picButton" type ="button" onclick=picChange()>Minecraft</button>
+    
+<script>
+    
+    function picChange(){
+        var pic = document.getElementById("graphic")
+        pic.src = "/images/intel.png"
+        
+        var button = document.getElementById("picButton")
+        button.innerHTML = "Intel"
+        
+    }
+    
+    function clkme(){
+        var ptext = document.getElementById('ptext')
+        ptext.innerHTML = 'Monkey'
+        ptext.style.fontSize = "35px"
+        ptext.style.color = "blue"
+    }
+
+    function adder(){
+        var x = 3
+        var y = 4
+        var z = x + y
+        var ptext = document.getElementById('ptext')
+        ptext.innerHTML = z
+        alert("This is an alert box")
+    }
+    
+    function test123(){
+        var a = 4
+        var b = 6
+        var c = a + b
+        var ptext = document.getElementById('ptext')
+        ptext.innerHTML = c
+        ptext.style.color = "red"
+        
+    }
+    
+        var word = "Shun" + " " + "Akiya"
+        document.getElementById("name").innerHTML = word
+        
+        var icecream = "Ice" + " " + "Cream"
+        document.getElementById("food").innerHTML = icecream
+
+
+</script>
+</body>
+</html>
