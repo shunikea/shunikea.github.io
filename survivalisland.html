@@ -6,8 +6,12 @@
         <title>Shun Akiya</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <style>
+        
+        body{
+            overflow: hidden;
+        }
             #container{
-                position:absolute;
+                position: absolute;
                 top: 80px;
                 bottom: 0px;
                 left: 0px;
@@ -18,37 +22,49 @@
             #leftpane{
                 width: 56%;
                 height: 100%;
-                background: blue;
                 float: left;
             }
             
             #rightpane{
                 width: 44%;
                 height: 100%;
-                background: green;
                 float: left;
             }
             #buttons{
                 position: absolute;
-                bottom: 0px;
+                bottom: 50px;
                 left: 56%;
                 right: 0px;
                 height: 50px;
-                background: pink;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
+            .btn{
+                margin: 40px;
+            }
+            
+            
             #storytext{
-                width: 100%;
-                height: 100%;
-                background: black;
+                position: absolute;
+                left: 56%;
+                right: 0px;
+                top: 0px;
+                bottom: 50px;
             }
-            
-            
+            #graphic{
+                max-height: 100%;
+                max-width: 100%;
+                width: 100%;
+            }
+            #bottomtext{
+                color: white;
+                font-size: 20px;
+            }
             
         </style>
     </head>
     
-    
-
 <table style="float: right;">
     <tr>
         <td>
@@ -84,19 +100,42 @@
 
 <div id = "container">
     <div id="leftpane">
+        <img id ="graphic" src="/images/island.jpg"/>
     </div>
     <div id="rightpane">
         <div id="storytext">
+            <p id="bottomtext">this is where the story will be</p>
+            
         </div>
         <div id="buttons">
-            <button type="button" class="btn btn-warning">Warning</button>
-            <button type="button" class="btn btn-warning">Warning</button>
-            <button type="button" class="btn btn-warning">Warning</button>
-            <button type="button" class="btn btn-warning">Warning</button>
+            <button id="button1" type="button" class="btn btn-warning">Warning</button>
+            <button id="button2" type="button" class="btn btn-warning">Warning</button>
+            <button id="button3" type="button" class="btn btn-warning">Warning</button>
+            <button id="button4" type="button" class="btn btn-warning">Warning</button>
         </div>
     </div>
 </div>
 
-
+<script>
+    var graphic = document.getElementById("graphic")
+    var bottomtext = document.getElementById("bottomtext")
+    var button1 = document.getElementById("button1")
+    var button2 = document.getElementById("button2")
+    var button3 = document.getElementById("button3")
+    var button4 = document.getElementById("button4")
+    var state = "intro"
+    
+    function intro(){
+        bottomtext.innerHTML = "You wake up on a beach in the middle of the wreckage of your private plane. You look around and find that you are on a tropical island with jungles and a mountain further inland; and you find that the sun is right above your head, which means that it is sometime in the afternoon. The last thing that you remember is going on vacation to the Bahama islands with your friends during a storm; your initial plan was to go the Bahamas to spend time with your family that lives there."
+        button1.innerHTML = "Yes"
+        button2.innerHTML = "No"
+        button3.style.display = "none"
+        button4.style.display = "none"
+    }
+    
+    intro()
+    
+    
+</script>
 </body>
 </html>
