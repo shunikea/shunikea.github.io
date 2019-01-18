@@ -1,40 +1,83 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    
 <head>
 <meta charset="utf-8">
 <title>Shun Akiya</title>
 </head>
-
 <body>
-
+    
     <button type="button" onclick="clkme()" >Click Me</button>
     <p id="ptext">This is about to change</p>
     
-
     <button type="button" onclick="adder()" >Adder</button>
     
-    
     <button type="button" onclick="test123()" >test123</button>
-    
-    
+
     <p id="name">My Name will go here</p>
-    
     
     <img width = 200 id = "graphic" src="/images/minecraft.jpg" />
     
     <button id = "picButton" type ="button" onclick=picChange()>Minecraft</button>
     
-<script>
+    <button id = "showImg" type ="button" onclick=showImg()>SHOW</button>
+    <button id = "hideImg" type ="button" onclick=hidImg()>HIDE</button>
     
-    function picChange(){
+<script>
+
+        var state = "minecraft"
         var pic = document.getElementById("graphic")
-        pic.src = "/images/intel.png"
-        
         var button = document.getElementById("picButton")
-        button.innerHTML = "Intel"
         
+        
+        var button2 = document.createElement('button')
+        var buttonText = document.createTextNode("Clicker")
+        button2.appendChild(buttonText)
+        button2.setAttribute("onclick", picChange())
+        button2.setAttribute("id", "bubblegum")
+        
+        
+        
+        document.body.appendChild(button2)
+        
+        function hideImg(){
+            pic.style.display = "none"
+        }
+        
+        function showImg(){
+            pic.style.display = "block"
+        }
+        
+        
+    function picChange(){
+        
+        if (state == "minecraft"){
+            pic.src = "/images/intel.png"
+            button.innerHTML = "Intel"
+            state = "intel"
+        }
+        else if (state == "intel"){
+            pic.src = "/images/minecraft.jpg"
+            button.innerHTML = "Minecraft"
+            state = "youtube"
+        }
+        else if (state == "youtube"){
+            pic.src = "/images/amazon.png"
+            button.innerHTML = "Amazon"
+            state = "amazon"
+        }
+        else if (state == "amazon"){
+            pic.src = "/images/yt.png"
+            button.innerHTML = "Youtube"
+            state = "twitter"
+        }
+         else if (state == "twitter"){
+            pic.src = "/images/twitter.png"
+            button.innerHTML = "Twitter"
+            state = "minecraft"
+        }
+         
     }
+    
     
     function clkme(){
         var ptext = document.getElementById('ptext')
@@ -65,8 +108,17 @@
         var word = "Shun" + " " + "Akiya"
         document.getElementById("name").innerHTML = word
         
-        var icecream = "Ice" + " " + "Cream"
-        document.getElementById("food").innerHTML = icecream
+        var w = 4 
+            
+        if (w > 6){
+            document.getElementById("name").innerHTML = "hello"
+
+        }
+        else{
+            document.getElementById("name").innerHTML = "bye"
+            
+        }
+
 
 
 </script>
