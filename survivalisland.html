@@ -43,8 +43,6 @@
             .btn{
                 margin: 40px;
             }
-            
-            
             #storytext{
                 position: absolute;
                 left: 56%;
@@ -61,7 +59,6 @@
                 color: white;
                 font-size: 20px;
             }
-            
         </style>
     </head>
     
@@ -105,13 +102,12 @@
     <div id="rightpane">
         <div id="storytext">
             <p id="bottomtext">this is where the story will be</p>
-            
         </div>
         <div id="buttons">
-            <button id="button1" type="button" class="btn btn-warning">Warning</button>
-            <button id="button2" type="button" class="btn btn-warning">Warning</button>
-            <button id="button3" type="button" class="btn btn-warning">Warning</button>
-            <button id="button4" type="button" class="btn btn-warning">Warning</button>
+            <button id="button1" onclick="buttonclick(1)" type="button" class="btn btn-warning">Warning</button>
+            <button id="button2" onclick="buttonclick(2)" type="button" class="btn btn-warning">Warning</button>
+            <button id="button3" onclick="buttonclick(3)" type="button" class="btn btn-warning">Warning</button>
+            <button id="button4" onclick="buttonclick(4)" type="button" class="btn btn-warning">Warning</button>
         </div>
     </div>
 </div>
@@ -126,14 +122,54 @@
     var state = "intro"
     
     function intro(){
-        bottomtext.innerHTML = "You wake up on a beach in the middle of the wreckage of your private plane. You look around and find that you are on a tropical island with jungles and a mountain further inland; and you find that the sun is right above your head, which means that it is sometime in the afternoon. The last thing that you remember is going on vacation to the Bahama islands with your friends during a storm; your initial plan was to go the Bahamas to spend time with your family that lives there."
-        button1.innerHTML = "Yes"
-        button2.innerHTML = "No"
+        bottomtext.innerHTML = "Intro: You wake up on a beach in the middle of the wreckage of your private plane. You look around and find that you are on a tropical island with jungles and a mountain further inland; and you find that the sun is right above your head, which means that it is sometime in the afternoon. The last thing that you remember is going on vacation to the Bahama islands with your friends during a storm; your initial plan was to go the Bahamas to spend time with your family that lives there. Explore the beach or search the broken plane? Press Explore to explore the beach, and search to search the broken plane:"
+        button1.innerHTML = "Explore"
+        button1.style.display = "block"
+        button2.innerHTML = "Search"
+        button2.style.display = "block"
         button3.style.display = "none"
         button4.style.display = "none"
+        graphic.src="/images/island1.jpg"
+    }
+    function planeandfootprints(){
+        bottomtext.innerHTML = "You find materials such as batteries, snacks, and water in the plane then go to the beach. You find footprints along the shore. You follow the footprints for half an hour and find that they lead into the jungle. You see a mountain out in the distance ahead of you. Do you want to go deeper into the jungle or go towards a mountain? Press jungle to go to the jungle or mountain to go towards the mountain:"
+        button1.innerHTML = "Jungle"
+        button1.style.display = "block"
+        button2.innerHTML = "Mountain"
+        button2.style.display = "block"
+        button3.innerHTML = "none"
+        button4.innerHTML = "none"
+        graphic.src="/images/plane.jpg"
+    }
+    function footprintsandmountain(){
+        bottomtext.innerHTML = "You find footprints along the shore. You follow the footprints for half an hour and find that they lead into the jungle. You see a mountain out in the distance ahead of you. Do you want to go deeper into the jungle or go towards a mountain? Press jungle to go to the jungle or mountain to go towards the mountain:"
+        button1.innerHTML = "Jungle"
+        button1.style.display = "block"
+        button2.innerHTML = "Mountain"
+        button2.style.display = "block"
+        button3.innerHTML = "none"
+        button4.innerHTML = "none"
+        graphic.src="/images/footprints.png"
+        
+    }
+    
+    function buttonclick(button){
+        if (state =="intro"){
+            if (button == 1){
+                state = "planeandfootprints"
+                planeandfootprints()
+            }
+            else if (button == 2){
+                state = "footprintsandmountain"
+                footprintsandmountain()
+            }
+        }
+        
+        
     }
     
     intro()
+
     
     
 </script>
