@@ -241,8 +241,6 @@
         button1.style.display = "block"
         
     }
-    
-    
     function buttonclick(button){
         if (state =="intro"){
             if (button == 1){
@@ -252,12 +250,9 @@
             else if (button == 2){
                 state = "planeandfootprints"
                 planeandfootprints()
-            }
-        }
-    }
-    
-    function buttonclick1(button){
-        if (state =="planeandjungle"){
+            }    
+            //
+        else if (state =="planeandfootprints"){
             if (button == 1){
                 state = "planeandjungle2"
                 planeandjungle2()
@@ -268,11 +263,8 @@
                 button1.style.display = "block"
             }
         }
-    }
-    
-    function buttonclick2(button){
-        if (state =="footprintsandmountain"){
-            if (button == 1){
+        else if (state =="footprintsandmountain"){
+             if (button == 1){
                 state = "footprintsandmountain_mountain"
                 footprintsandmountain_mountain()
             }
@@ -282,10 +274,8 @@
             }
         }
     }
+}
     
-
-
-
     intro()
 
     
