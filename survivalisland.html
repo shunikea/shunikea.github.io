@@ -101,13 +101,13 @@
     </div>
     <div id="rightpane">
         <div id="storytext">
-            <p id="bottomtext">this is where the story will be</p>
+            <p id="bottomtext">the program is not working (clearly)</p>
         </div>
         <div id="buttons">
-            <button id="button1" onclick="buttonclick(1)" type="button" class="btn btn-warning">Warning</button>
-            <button id="button2" onclick="buttonclick(2)" type="button" class="btn btn-warning">Warning</button>
-            <button id="button3" onclick="buttonclick(3)" type="button" class="btn btn-warning">Warning</button>
-            <button id="button4" onclick="buttonclick(4)" type="button" class="btn btn-warning">Warning</button>
+            <button id="button1" onclick="buttonclick(1)" type="button" class="btn btn-warning">it</button>
+            <button id="button2" onclick="buttonclick(2)" type="button" class="btn btn-warning">is</button>
+            <button id="button3" onclick="buttonclick(3)" type="button" class="btn btn-warning">not</button>
+            <button id="button4" onclick="buttonclick(4)" type="button" class="btn btn-warning">working</button>
         </div>
     </div>
 </div>
@@ -131,6 +131,69 @@
         button4.style.display = "none"
         graphic.src="/images/island1.jpg"
     }
+    //split #1 (1st) Explore
+    function footprintsandmountain(){
+        bottomtext.innerHTML = "You find footprints along the shore. You follow the footprints for half an hour and find that they lead into the jungle. You see a mountain out in the distance ahead of you. Do you want to go deeper into the jungle or go towards a mountain? Press jungle to go to the jungle or mountain to go towards the mountain:"
+        button1.innerHTML = "Mountain"
+        button1.style.display = "block"
+        button2.innerHTML = "Jungle"
+        button2.style.display = "block"
+        button3.innerHTML = "none"
+        button4.innerHTML = "none"
+        graphic.src="/images/footprints.png"
+    }
+    //path from footprintsandmountain where you meet Nolan
+    function footprintsandmountain_mountain(){
+        bottomtext.innerHTML = ""
+        button1.innerHTML = ""
+        button1.style.display = "block"
+        button2.innerHTML = ""
+        button2.style.display = "block"
+        button3.innerHTML = "none"
+        button4.innerHTML = "none"
+        graphic.src="/images/mountain.jpg"
+    }
+    //death from footprintsandmountain Jungle 
+    function footprintsandmountain_jungle(){
+        bottomtext.innerHTML = "You fall off of a cliff and die"
+        button1.innerHTML = "Restart"
+        button1.style.display = "block"
+        graphic.src="/images/cliff.jpg"
+    }
+    //merges with the rest of the program
+    function planeandjungle_second(){
+        bottomtext.innerHTML = "You go towards the mountain and meet Nolan; too dark to explore so you make shelter. You're about to go to sleep, but you hear rattling in the distance; it's Aaron and Emily. It's the next day... Go back to the plane and search it one more time or go deeper into the jungle? Press jungle to explore the jungle, and plane to go back to the plane:"
+        button1.innerHTML = "Jungle"
+        button1.style.display = "block"
+        button2.innerHTML = "Plane"
+        button2.style.display = "block"
+        button3.innerHTML = "none"
+        button4.innerHTML = "none"
+        graphic.src="/images/jungle.jpg"
+     }
+     //merges with the rest of the program
+     function planeandjungle2_second(){
+        bottomtext.innerHTML = "You go back to the plane, and you see that Kylie is looting the plane. You find a satellite phone, but the signal is too weak. Go to the top of the mountain for more altitude or you explore the island more? Type i to explore the island, and m to go to the mountain:"
+        button1.innerHTML = "Island"
+        button1.style.display = "block"
+        button2.innerHTML = "Mountain"
+        button2.style.display = "block"
+        button3.innerHTML = "none"
+        button4.innerHTML = "none"
+        graphic.src="/images/mountain.png"    
+      }
+      //story ends and takes player back to website
+      function end(){
+        bottomtext.innerHTML = "You start your journey up the mountain. You and your friends reach the top of the mountain and the satellite phone receives a strong signal. You wait for a while and the emergency helicopter arrives; you and your friends safely go back to the desired destination. The End."
+        button1.innerHTML = "Back to Website"
+        button1.style.display = "block"
+      }
+     
+    
+
+    
+    
+    //split #2 (2nd) PLane
     function planeandfootprints(){
         bottomtext.innerHTML = "You find materials such as batteries, snacks, and water in the plane then go to the beach. You find footprints along the shore. You follow the footprints for half an hour and find that they lead into the jungle. You see a mountain out in the distance ahead of you. Do you want to go deeper into the jungle or go towards a mountain? Press jungle to go to the jungle or mountain to go towards the mountain:"
         button1.innerHTML = "Jungle"
@@ -141,33 +204,88 @@
         button4.innerHTML = "none"
         graphic.src="/images/plane.jpg"
     }
-    function footprintsandmountain(){
-        bottomtext.innerHTML = "You find footprints along the shore. You follow the footprints for half an hour and find that they lead into the jungle. You see a mountain out in the distance ahead of you. Do you want to go deeper into the jungle or go towards a mountain? Press jungle to go to the jungle or mountain to go towards the mountain:"
+    //meet nolan and create shelter
+    function planeandjungle(){
+        bottomtext.innerHTML = "You go towards the mountain and meet Nolan; too dark to explore so you make shelter. You're about to go to sleep, but you hear rattling in the distance; it's Aaron and Emily. It's the next day... Go back to the plane and search it one more time or go deeper into the jungle? Press jungle to explore the jungle, and plane to go back to the plane:"
         button1.innerHTML = "Jungle"
+        button1.style.display = "block"
+        button2.innerHTML = "Plane"
+        button2.style.display = "block"
+        button3.innerHTML = "none"
+        button4.innerHTML = "none"
+        graphic.src="/images/jungle.jpg"
+        
+    }
+    //restarts the user
+    function restart(){
+        bottomtext.innerHTML = "You trip on a rock and hit your head against the corner of a sharp boulder (restart program)"
+        button1.innerHTML = "Restart"
+        button1.style.display = "block"
+        
+    }
+    //starts journey up the mountain
+    function planeandjungle2(){
+        bottomtext.innerHTML = "You go back to the plane, and you see that Kylie is looting the plane. You find a satellite phone, but the signal is too weak. Go to the top of the mountain for more altitude or you explore the island more? Type i to explore the island, and m to go to the mountain:"
+        button1.innerHTML = "Island"
         button1.style.display = "block"
         button2.innerHTML = "Mountain"
         button2.style.display = "block"
         button3.innerHTML = "none"
         button4.innerHTML = "none"
-        graphic.src="/images/footprints.png"
+        graphic.src="/images/mountain.png"    
+    }
+    //story ends and takes player back to website
+    function end(){
+        bottomtext.innerHTML = "You start your journey up the mountain. You and your friends reach the top of the mountain and the satellite phone receives a strong signal. You wait for a while and the emergency helicopter arrives; you and your friends safely go back to the desired destination. The End."
+        button1.innerHTML = "Back to Website"
+        button1.style.display = "block"
         
     }
+    
     
     function buttonclick(button){
         if (state =="intro"){
             if (button == 1){
-                state = "planeandfootprints"
-                planeandfootprints()
-            }
-            else if (button == 2){
                 state = "footprintsandmountain"
                 footprintsandmountain()
             }
+            else if (button == 2){
+                state = "planeandfootprints"
+                planeandfootprints()
+            }
         }
-        
-        
     }
     
+    function buttonclick1(button){
+        if (state =="planeandjungle"){
+            if (button == 1){
+                state = "planeandjungle2"
+                planeandjungle2()
+            }
+            else if (button == 2){
+                bottomtext.innerHTML = "You trip on a rock and hit your head against the corner of a sharp boulder (restart program)"
+                button1.innerHTML = "Restart"
+                button1.style.display = "block"
+            }
+        }
+    }
+    
+    function buttonclick2(button){
+        if (state =="footprintsandmountain"){
+            if (button == 1){
+                state = "footprintsandmountain_mountain"
+                footprintsandmountain_mountain()
+            }
+            else if (button == 2){
+                state = "footprintsandmountain_jungle"
+                footprintsandmountain_jungle()
+            }
+        }
+    }
+    
+
+
+
     intro()
 
     
